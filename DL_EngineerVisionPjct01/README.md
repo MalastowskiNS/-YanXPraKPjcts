@@ -43,8 +43,7 @@
 
 ## Структура репозитория
 
-''' text
-
+```text
 DL_EngineerVisionPjct01/
 ├── notebook02.ipynb                                    #  основной ноутбук проекта (обучение/оценка/отчёт)
 ├── pdf_reports.py                                      #  создание pdf отчета
