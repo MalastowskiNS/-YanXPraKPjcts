@@ -45,14 +45,43 @@
 
 ```text
 DL_EngineerVisionPjct01/
-├── notebooks/
-│   └── notebook02.ipynb              # основной ноутбук проекта (обучение/оценка/отчёт)
-├── src/                              # вспомогательный код проекта (метрики/FPS/PDF/инференс)
-│   ├── pdf_reports.py
-│   ├── prepost.py
-│   └── ...                           # прочие утилиты, которые ты писал/менял
+├── notebook02.ipynb                                    #  основной ноутбук проекта (обучение/оценка/отчёт)
+├── pdf_reports.py                                      #  создание pdf отчета
+├── prepost.py                                          #  предобработка
+├── datasetconverter.py                                 #  импортируем  конвертор   VOC XML  в COCO JSON
+├── metrics_calc.py                                     #  расчет метрик
+├── video_processing.py                                 #  обработка и создание видео
+├── configs/
+│   └── fcos/
+│       └── fcos_minecraft02.py                         #  файл настроек для fcos модели
+├── dataset/
+│   └── minecraft/
+│       ├── data_coco.yaml                              # конфиг датасета для Ultralytics (YOLO)
+│       ├── video.mp4                                   # видео для анализа
+│       ├── labels.txt                                  # метки классов
+│       ├── annotations/                                # COCO json (train/val/test)
+│           └── _test_annotations.coco.json             # аннотации для test
+│           └── _valid_annotations.coco.json            # аннотации для valid
+│           └── _train_annotations.coco.json            # аннотации для train
+│       ├── test/                                       # dataset для test
+│           └── images                                  # изображения
+│           └── labels                                  # метки
+│       ├── train/                                      # dataset для test
+│           └── images                                  # изображения
+│           └── labels                                  # метки
+│       ├── valid/                                      # dataset для test
+│           └── images                                  # изображения
+│           └── labels                                  # метки
+
+
+
+│       └── (images/ ...)             # картинки обычно НЕ коммитятся (или через Git LFS)
+
 ├── configs/
 │   └── fcos_*.py                     # конфиги MMDetection под FCOS (датасет, классы, hooks)
+
+
+
 ├── dataset/
 │   └── minecraft/
 │       ├── data_coco.yaml            # конфиг датасета для Ultralytics (YOLO)
