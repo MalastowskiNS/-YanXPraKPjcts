@@ -40,3 +40,31 @@
 - `artifacts/inference/...` — визуализации детекций (картинки/кадры)
 - `artifacts/yolo_training.jpg`, `artifacts/fcos_training.jpg` — графики обучения
 - `artifacts/inference/training_comparetion_pic.jpg` — сравнительная визуализация
+
+## Структура репозитория
+
+```text
+DL_EngineerVisionPjct01/
+├── notebooks/
+│   └── notebook02.ipynb              # основной ноутбук проекта (обучение/оценка/отчёт)
+├── src/                              # вспомогательный код проекта (метрики/FPS/PDF/инференс)
+│   ├── pdf_reports.py
+│   ├── prepost.py
+│   └── ...                           # прочие утилиты, которые ты писал/менял
+├── configs/
+│   └── fcos_*.py                     # конфиги MMDetection под FCOS (датасет, классы, hooks)
+├── dataset/
+│   └── minecraft/
+│       ├── data_coco.yaml            # конфиг датасета для Ultralytics (YOLO)
+│       ├── annotations/              # COCO json (train/val/test) — если небольшой
+│       └── (images/ ...)             # картинки обычно НЕ коммитятся (или через Git LFS)
+├── artifacts/
+│   ├── report.pdf                    # итоговый PDF отчёт
+│   ├── metrics/
+│   │   └── metrics_comparison.csv    # сравнение метрик моделей (качество/скорость)
+│   ├── inference/
+│   │   ├── training_comparetion_pic.jpg  # сравнительная картинка обучения/результатов
+│   │   └── ...                       # примеры детекций (картинки/кадры)
+│   └── yolo/                         # результаты тренировок YOLO (логи/папки runs)
+└── README.md                         # описание проекта и как запускать
+
