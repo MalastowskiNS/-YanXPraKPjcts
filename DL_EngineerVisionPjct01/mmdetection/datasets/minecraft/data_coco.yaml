@@ -1,0 +1,9 @@
+path: G:\_Work\python_lab\practicum\advanced_part_Img_\Ch01_Objects_detection_\mmdetection\dataset\minecraft
+train: ../train
+val: ../valid
+test: ../test
+
+nc: 17
+names: ['bee', 'chicken', 'cow', 'creeper', 'enderman', 'fox', 'frog', 'ghast','goat', 'llama', 'pig', 'sheep', 'skeleton', 'spider', 'turtle', 'wolf', 'zombie' ]
+
+
