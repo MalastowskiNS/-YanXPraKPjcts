@@ -43,7 +43,6 @@
 
 ## Структура репозитория
 
-```text
 DL_EngineerVisionPjct01/
 ├── notebook02.ipynb                                    #  основной ноутбук проекта (обучение/оценка/отчёт)
 ├── pdf_reports.py                                      #  создание pdf отчета
@@ -64,36 +63,40 @@ DL_EngineerVisionPjct01/
 │           └── _valid_annotations.coco.json            # аннотации для valid
 │           └── _train_annotations.coco.json            # аннотации для train
 │       ├── test/                                       # dataset для test
-│           └── images                                  # изображения
-│           └── labels                                  # метки
+│           └── images/                                 # изображения
+│           └── labels/                                 # метки
 │       ├── train/                                      # dataset для test
-│           └── images                                  # изображения
-│           └── labels                                  # метки
+│           └── images/                                 # изображения
+│           └── labels/                                 # метки
 │       ├── valid/                                      # dataset для test
-│           └── images                                  # изображения
-│           └── labels                                  # метки
-
-
-
-│       └── (images/ ...)             # картинки обычно НЕ коммитятся (или через Git LFS)
-
-├── configs/
-│   └── fcos_*.py                     # конфиги MMDetection под FCOS (датасет, классы, hooks)
-
-
-
-├── dataset/
-│   └── minecraft/
-│       ├── data_coco.yaml            # конфиг датасета для Ultralytics (YOLO)
-│       ├── annotations/              # COCO json (train/val/test) — если небольшой
-│       └── (images/ ...)             # картинки обычно НЕ коммитятся (или через Git LFS)
+│           └── images/                                 # изображения
+│           └── labels/                                 # метки
+├── checkpoints/                                        # веса предобученных моделей (здесь только для yolo)
+│   └── last_best_yolo.pt                               # yolo веса
 ├── artifacts/
-│   ├── report.pdf                    # итоговый PDF отчёт
-│   ├── metrics/
-│   │   └── metrics_comparison.csv    # сравнение метрик моделей (качество/скорость)
-│   ├── inference/
-│   │   ├── training_comparetion_pic.jpg  # сравнительная картинка обучения/результатов
-│   │   └── ...                       # примеры детекций (картинки/кадры)
-│   └── yolo/                         # результаты тренировок YOLO (логи/папки runs)
+│   ├── Minecraft_world_prediction.pdf                  # итоговый PDF отчёт
+│   ├── class_distribution.png                          # распределение классов train
+│   ├── fcos_training.jpg                               # процесс обучения fcos
+│   ├── yolo_training.jpg                               # процесс обучения yolo
+│   ├── test_img.jpg                                    # тестовое изображение (до использование моделей)
+│   ├── fcos/                                           # обучение fcos модели протоколы
+│   ├── inference/                                      # интерференс
+│       ├── training_comparetion_pic.jpg                # случайные фото на интерференсе для fcos и yolo
+│       ├── fcos/
+│           └── preds/                                  # предсказания для fcos
+│           └── vis/                                    # результаты интерференса для fcos
+│       ├── yolo/                                 
+│           └── metrics/                                # метрики на test  для yolo
+│           └── yolo/                                   # результаты интерференса для yolo
+│       ├── pretrain/                               
+│           └── test_pretrained_fcos.jpg                # предсказание модели fcos до обучения 
+│           └── test_pretrained_yolo.jpg                # предсказание модели yolo до обучения 
+│   ├── metrics/                                        # метрики
+│           └── metrics_comparison.csv                  # сравнение метрик на интерференсе для fcos и yolo
+│   ├── videos/                                         
+│           └── fcos_inference.mp4                      # видео интерференса для fcos
+│           └── yolo_inference.mp4                      # видео интерференса для yolo
+│   ├── yolo/yolo_train/                                # обучение yolo модели протоколы
+│           └── weights/                                # веса модели
 └── README.md                         # описание проекта и как запускать
 
