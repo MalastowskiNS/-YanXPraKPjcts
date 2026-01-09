@@ -40,8 +40,3 @@
 - `artifacts/inference/...` — визуализации детекций (картинки/кадры)
 - `artifacts/yolo_training.jpg`, `artifacts/fcos_training.jpg` — графики обучения
 - `artifacts/inference/training_comparetion_pic.jpg` — сравнительная визуализация
-
-### Как запустить
-1) Установить зависимости (примерно):
-```bash
-pip install -r requirements.txt
